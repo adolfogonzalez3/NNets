@@ -8,4 +8,5 @@ def create_test_model(In=10, Out=1, learning_rate=1e-3):
     model = Model(inputs=net_input, outputs=x)
     adam = Adam(lr=learning_rate)
     model.compile(optimizer=adam, loss='mse')
+    model._make_train_function()
     return model

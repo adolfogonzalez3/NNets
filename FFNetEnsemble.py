@@ -1,10 +1,10 @@
 import numpy as np
-from FeedForwardNetAsync import FeedForwardNetAsync
+from NNets import FFNetAsync
 
-class FeedForwardNetEnsemble(object):
+class FFNetEnsemble(object):
     '''An interface that abstracts the talking with an asynchronous Agent.'''
     def __init__(self, model, N=5):
-        self.nets = [FeedForwardNetAsync(model) for i in range(N)]
+        self.nets = [FFNetAsync(model) for i in range(N)]
 
     def predict_on_batch(self, batch):
         for net in self.nets:
